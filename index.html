@@ -3,175 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACTIDAD FINAL de la 3RA EVA - FP</title>
+    <title>Algoritmos Esenciales: Tu Puerta al Mundo de la Programación</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f9;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
         header {
-            background-color: #333;
+            background-color: #2a9d8f;
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            font-size: 2em;
-        }
-        .algoritmos ul {
-            padding: 0;
-            list-style-type: none;
+        h1 {
             margin: 0;
+            font-size: 2.5rem;
         }
-        .algoritmos li {
-            margin: 10px 0;
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 15px;
         }
         button {
-            background-color: #007bff;
+            background-color: #2a9d8f;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px 15px;
             cursor: pointer;
-            font-size: 1.1em;
-            width: 100%;
+            font-size: 1rem;
+            border-radius: 5px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #21867a;
         }
-        .integrantes {
-            background-color: #333;
+        footer {
+            background-color: #264653;
             color: white;
-            padding: 20px;
             text-align: center;
-            margin-top: 40px;
+            padding: 10px 0;
+            margin-top: 20px;
         }
-        .integrantes p {
-            margin: 5px 0;
-        }
-        .description {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
-    <script>
-        // Funciones para cada algoritmo
-        function calcularComision() {
-            let ventas = prompt("Introduce el valor de las ventas:");
-            let comision = ventas * 0.05;
-            alert("La comisión es: " + comision);
-        }
-
-        function gestionInventario() {
-            let producto = prompt("Introduce el nombre del producto:");
-            let cantidad = prompt("Introduce la cantidad disponible:");
-            alert("Producto: " + producto + "\nCantidad disponible: " + cantidad);
-        }
-
-        function calculoImpuestos() {
-            let precio = prompt("Introduce el precio del producto:");
-            let impuestos = precio * 0.16;
-            alert("El impuesto es: " + impuestos);
-        }
-
-        function divisionRastreoComisiones() {
-            let totalVentas = prompt("Introduce el total de ventas:");
-            let comisionTotal = prompt("Introduce la comisión total a repartir:");
-            let comisionIndividual = comisionTotal / totalVentas;
-            alert("La comisión individual es: " + comisionIndividual);
-        }
-
-        function impuestosDiferentesTasas() {
-            let precio = prompt("Introduce el precio del producto:");
-            let tasaImpuesto = prompt("Introduce la tasa de impuesto (ejemplo: 0.16 para 16%):");
-            let impuesto = precio * tasaImpuesto;
-            alert("El impuesto es: " + impuesto);
-        }
-
-        function prediccionDemandaCultivos() {
-            const cultivos = ['Maíz', 'Trigo', 'Soja', 'Arroz'];
-            const cultivoSeleccionado = cultivos[Math.floor(Math.random() * cultivos.length)];
-            const demandaAgua = (Math.random() * 100 + 50).toFixed(2); // Demanda entre 50 y 150 litros
-            const demandaNutrientes = (Math.random() * 50 + 20).toFixed(2); // Demanda entre 20 y 70 unidades
-            alert(`Cultivo: ${cultivoSeleccionado}\nDemanda de agua: ${demandaAgua} litros\nDemanda de nutrientes: ${demandaNutrientes} unidades`);
-        }
-
-        function optimizacionFertilizacion() {
-            const humedad = (Math.random() * 100).toFixed(2);
-            const pH = (Math.random() * 3 + 5).toFixed(2); // Rango de pH entre 5 y 8
-            const nutrientesDisponibles = (Math.random() * 50 + 10).toFixed(2); // Cantidad de nutrientes entre 10 y 60
-            const fertilizanteRecomendado = (100 - humedad) + (7 - pH) * 10 + (60 - nutrientesDisponibles) * 0.5;
-            alert(`Datos de los sensores:\nHumedad: ${humedad}%\nPH: ${pH}\nNutrientes: ${nutrientesDisponibles} unidades\nFertilizante recomendado: ${fertilizanteRecomendado.toFixed(2)} kg/ha`);
-        }
-
-        function descuentoVolumen() {
-            let cantidad = prompt("Introduce la cantidad de productos:");
-            let descuento = (cantidad >= 10) ? 0.10 : 0;
-            alert("Descuento aplicado: " + (descuento * 100) + "%");
-        }
-
-        function convertirMetrosKilometros() {
-            let metros = prompt("Introduce la cantidad de metros:");
-            let kilometros = metros / 1000;
-            alert(metros + " metros son " + kilometros + " kilómetros.");
-        }
-
-        function celsiusAFahrenheit() {
-            let celsius = prompt("Introduce los grados Celsius:");
-            let fahrenheit = (celsius * 9/5) + 32;
-            alert(celsius + "°C son " + fahrenheit + "°F.");
-        }
-    </script>
 </head>
 <body>
+    <header>
+        <h1>Algoritmos Esenciales</h1>
+        <p>Tu Puerta al Mundo de la Programación</p>
+    </header>
+    <main>
+        <section>
+            <h2>Breve Descripción</h2>
+            <p>
+                Esta página reúne 10 algoritmos esenciales para cualquier programador principiante o intermedio. 
+                Desde simulaciones hasta herramientas prácticas, cada algoritmo muestra cómo resolver problemas comunes 
+                de forma eficiente. Un recurso diseñado para estudiantes y entusiastas de la programación.
+            </p>
+        </section>
+        <section>
+            <h2>Top 10 Algoritmos</h2>
+            <ul>
+                <li>
+                    <strong>Simulación de Demanda:</strong>
+                    <button onclick="simularDemanda()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Generador de Contraseñas Seguras:</strong>
+                    <button onclick="generarContrasena()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Juego de Adivinanza Numérica:</strong>
+                    <button onclick="juegoAdivinanza()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Simulador de Probabilidades:</strong>
+                    <button onclick="simularProbabilidades()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Sistema de Registro de Clientes:</strong>
+                    <button onclick="registrarClientes()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Calculadora Financiera:</strong>
+                    <button onclick="calculadoraFinanciera()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Conversor de Unidades:</strong>
+                    <button onclick="convertirUnidades()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Control de Inventarios:</strong>
+                    <button onclick="controlInventarios()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Calculadora de Edad:</strong>
+                    <button onclick="calcularEdad()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Convertidor de Temperatura:</strong>
+                    <button onclick="convertirTemperatura()">Ejecutar</button>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Integrantes del Equipo 1</h2>
+            <ul>
+                <li>Aguilar Camacho Juan Carlos</li>
+                <li>Aguilar Martinez Antonio</li>
+                <li>Emiliano Aguileira Hernández</li>
+                <li>Alfaro Flores Juan Manuel</li>
+                <li>Ayala Morales Andreij Haziel</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Equipo 1. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function simularDemanda() {
+            const demanda = prompt("Ingrese la demanda inicial:");
+            alert("Demanda simulada: " + (parseInt(demanda) + Math.floor(Math.random() * 100)));
+        }
 
-<header>
-    <h1>ACTIDAD FINAL de la 3RA EVA - FP</h1>
-</header>
+        function generarContrasena() {
+            const longitud = prompt("Ingrese la longitud de la contraseña:");
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            let contrasena = "";
+            for (let i = 0; i < longitud; i++) {
+                contrasena += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+            alert("Contraseña generada: " + contrasena);
+        }
 
-<div class="container">
-    <div class="description">
-        <h2>Descripción del Proyecto</h2>
-        <p>Este proyecto consiste en la creación de 10 algoritmos fundamentales aplicados a la gestión de ventas, cálculo de impuestos, control de inventarios, predicción de demandas de cultivos, optimización de fertilización, entre otros.</p>
-    </div>
+        function juegoAdivinanza() {
+            const numero = Math.floor(Math.random() * 100) + 1;
+            let intento = 0;
+            while (intento !== numero) {
+                intento = parseInt(prompt("Adivina el número (entre 1 y 100):"));
+                if (intento > numero) alert("Es menor.");
+                else if (intento < numero) alert("Es mayor.");
+                else alert("¡Correcto! El número era " + numero);
+            }
+        }
 
-    <h2>Algoritmos</h2>
-    <div class="algoritmos">
-        <ul>
-            <li><button onclick="calcularComision()">1. Calcular comisión</button></li>
-            <li><button onclick="gestionInventario()">2. Gestión de inventario en un punto de venta</button></li>
-            <li><button onclick="calculoImpuestos()">3. Control de facturación y cálculo de impuestos</button></li>
-            <li><button onclick="divisionRastreoComisiones()">4. División y rastreo de comisiones de venta</button></li>
-            <li><button onclick="impuestosDiferentesTasas()">5. Cálculo de impuestos para productos con diferentes tasas</button></li>
-            <li><button onclick="prediccionDemandaCultivos()">6. Predicción de demandas de cultivos</button></li>
-            <li><button onclick="optimizacionFertilizacion()">7. Optimización de la fertilización con datos de sensores de suelo</button></li>
-            <li><button onclick="descuentoVolumen()">8. Cálculo de descuento en compras por volumen</button></li>
-            <li><button onclick="convertirMetrosKilometros()">9. Convertir metros a kilómetros</button></li>
-            <li><button onclick="celsiusAFahrenheit()">10. Conversión de grados Celsius a Fahrenheit</button></li>
-        </ul>
-    </div>
+        function simularProbabilidades() {
+            const lanzamientos = prompt("Ingrese el número de lanzamientos de moneda:");
+            let cara = 0;
+            for (let i = 0; i < lanzamientos; i++) {
+                if (Math.random() < 0.5) cara++;
+            }
+            alert("Resultado: " + cara + " caras y " + (lanzamientos - cara) + " sellos.");
+        }
 
-    <h2>Integrantes del equipo</h2>
-    <div class="integrantes">
-        <p>Hernández Rivera Diego Eduardo</p>
-        <p>Hoyos Rivera Gustavo</p>
-        <p>Hoyos Saldaña Mario Emmanuel</p>
-        <p>Landa Derian Yassir</p>
-        <p>Lara Ortega Xavier</p>
-    </div>
-</div>
+        function registrarClientes() {
+            let cliente = prompt("Ingrese el nombre del cliente a registrar:");
+            alert("Cliente registrado: " + cliente);
+        }
 
+        function calculadoraFinanciera() {
+            const capital = prompt("Ingrese el capital inicial:");
+            const tasa = prompt("Ingrese la tasa de interés (en porcentaje):");
+            const tiempo = prompt("Ingrese el tiempo (en años):");
+            const interes = (capital * tasa * tiempo) / 100;
+            alert("El interés generado es: $" + interes);
+        }
+
+        function convertirUnidades() {
+            const metros = prompt("Ingrese la cantidad en metros:");
+            alert("Equivale a " + (metros * 100) + " centímetros y " + (metros * 3.281) + " pies.");
+        }
+
+        function controlInventarios() {
+            const entradas = prompt("Ingrese las entradas:");
+            const salidas = prompt("Ingrese las salidas:");
+            const inventarioFinal = entradas - salidas;
+            alert("Inventario final: " + inventarioFinal);
+        }
+
+        function calcularEdad() {
+            const anioNacimiento = prompt("Ingrese su año de nacimiento:");
+            const edad = new Date().getFullYear() - anioNacimiento;
+            alert("Su edad es: " + edad + " años.");
+        }
+
+        function convertirTemperatura() {
+            const celsius = prompt("Ingrese la temperatura en Celsius:");
+            const fahrenheit = (celsius * 9/5) + 32;
+            alert("Equivale a " + fahrenheit + "° Fahrenheit.");
+        }
+    </script>
 </body>
 </html>
-
-
